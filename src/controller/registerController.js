@@ -1,5 +1,4 @@
 const db = require('../db/db');
-// const Authentication = require('../auth/auth');
 const {
   collection,
   addDoc,
@@ -7,6 +6,7 @@ const {
   where,
   query,
 } = require('firebase/firestore');
+// const Authentication = require('../auth/auth');
 
 const usersRef = collection(db, 'users');
 
