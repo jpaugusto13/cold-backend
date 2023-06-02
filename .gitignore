@@ -1,0 +1,22 @@
+# Arquivos e diretórios a serem ignorados pelo Git
+
+# Arquivos de configuração específicos da IDE
+.idea/
+
+# Arquivos gerados pelo Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Arquivos de build
+dist/
+build/
+
+# Arquivos de log
+*.log
+
+# Arquivos de credenciais sensíveis
+.env
+
+# Arquivos de cache
+.cache/
