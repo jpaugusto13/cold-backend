@@ -1,10 +1,9 @@
 const db = require('../db/db');
 const jwt = require('jsonwebtoken');
-const secretKey = 'abacate';
 const { getDocs, where, query, collection } = require('firebase/firestore');
 
-
 const usersRef = collection(db, 'users');
+const secretKey = 'abacate';
 
 class LoginController {
   static async login(req, res) {

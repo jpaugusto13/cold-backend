@@ -1,9 +1,9 @@
-const server = require('./src/app/app');
+const { app, port, dataBase } = require('./src/app/app');
 
-server.app.listen(server.port, () => {
+app.listen(port, () => {
   try {
-    server.dataBase;
-    console.log(`Servidor rodando http://127.0.0.1:${server.port}/ `);
+    dataBase;
+    console.log(`Servidor rodando http://127.0.0.1:${port}/ `);
   } catch (error) {
     console.error(error.message);
   }
