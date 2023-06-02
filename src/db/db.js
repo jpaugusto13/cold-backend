@@ -1,8 +1,9 @@
 const { initializeApp } = require('firebase/app');
 const { getFirestore } = require('firebase/firestore');
+require('dotenv').config();
 
 const firebaseApp = initializeApp({
-  apiKey: 'AIzaSyBv40e2cJJqsMWzJkPb1pYhjDUwGQGLNEw',
+  apiKey: process.env.API_KEY,
   authDomain: 'cold-db482.firebaseapp.com',
   projectId: 'cold-db482',
 });

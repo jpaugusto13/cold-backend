@@ -1,9 +1,8 @@
 const db = require('../db/db');
-const jwt = require('jsonwebtoken');
 const { getDocs, where, query, collection } = require('firebase/firestore');
+const Authentication = require('../auth/auth');
 
 const usersRef = collection(db, 'users');
-const secretKey = 'abacate';
 
 class LoginController {
   static async login(req, res) {
@@ -18,7 +17,7 @@ class LoginController {
 
     const user = response.docs[0].data();
     if (user.password === password) {
-      const token = jwt.sign({ email }, secretKey, { expiresIn: '1h' });
+      const token = Authentication.geraToken(email);
       return res.json({ token });
     }
 

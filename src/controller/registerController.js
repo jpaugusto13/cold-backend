@@ -1,6 +1,5 @@
 const db = require('../db/db');
 const Authentication = require('../auth/auth');
-const jwt = require('jsonwebtoken');
 const {
   collection,
   addDoc,
@@ -10,7 +9,6 @@ const {
 } = require('firebase/firestore');
 
 const usersRef = collection(db, 'users');
-const secretKey = 'abacate';
 
 class RegisterController {
   static async register(req, res) {
@@ -22,8 +20,8 @@ class RegisterController {
     if (!response.empty) {
       return res.status(409).json({ mensage: 'Usuário já cadastrado!' });
     }
-    // const token = Authentication.geraToken({ name, email });
-    const token = jwt.sign({ email }, secretKey, { expiresIn: '1h' });
+
+    const token = Authentication.geraToken(email);
 
     const user = {
       name: name,
