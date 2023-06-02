@@ -1,6 +1,5 @@
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
-const secretKey = 'abacate';
 
 class Authenticator {
   static geraToken(email) {

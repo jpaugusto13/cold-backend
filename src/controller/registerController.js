@@ -1,5 +1,5 @@
 const db = require('../db/db');
-const Authentication = require('../auth/auth');
+// const Authentication = require('../auth/auth');
 const {
   collection,
   addDoc,
@@ -21,14 +21,14 @@ class RegisterController {
       return res.status(409).json({ mensage: 'Usuário já cadastrado!' });
     }
 
-    const token = Authentication.geraToken(email);
+    // const token = Authentication.geraToken(email);
 
     const user = {
       name: name,
       email: email,
       password: password,
       money: 0,
-      token: token,
+      // token: token,
     };
     await addDoc(usersRef, user);
     return res.status(201).json({ mensage: 'Usuário cadastrado!' });
