@@ -1,5 +1,6 @@
 const db = require('../db/db');
 const Authentication = require('../auth/auth');
+const jwt = require('jsonwebtoken');
 const {
   collection,
   addDoc,
@@ -21,7 +22,8 @@ class RegisterController {
     if (!response.empty) {
       return res.status(409).json({ mensage: 'Usuário já cadastrado!' });
     }
-    const token = Authentication.geraToken({ name, email });
+    // const token = Authentication.geraToken({ name, email });
+    const token = jwt.sign({ email }, secretKey, { expiresIn: '1h' });
 
     const user = {
       name: name,
