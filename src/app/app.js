@@ -15,10 +15,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', [
-    'https://cold-frontend.vercel.app',
-    'http://localhost:5173',
-  ]);
+  res.header('Access-Control-Allow-Origin', 'https://cold-frontend.vercel.app');
   next();
 });
 
