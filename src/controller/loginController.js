@@ -18,10 +18,10 @@ class LoginController {
     const user = response.docs[0].data();
     if (user.password === password) {
       const token = Authentication.geraToken(email);
-      return res.json({ token });
+      return res.status(200).json({ token });
+    } else {
+      return res.status(401).json({ error: 'Senha incorreta' });
     }
-
-    return res.status(401).json({ error: 'Senha incorreta' });
   }
 }
 
