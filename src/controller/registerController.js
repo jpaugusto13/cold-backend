@@ -12,7 +12,8 @@ const usersRef = collection(db, 'users');
 
 class RegisterController {
   static async register(req, res) {
-    const { name, email, password } = req.body;
+    const { firstName, lastName, cpf, phone, birthday, email, password } =
+      req.body;
 
     const filter = query(usersRef, where('email', '==', email));
     const response = await getDocs(filter);
@@ -21,15 +22,19 @@ class RegisterController {
       return res.status(409).json({ mensage: 'Usuário já cadastrado!' });
     }
 
-    // const token = Authentication.geraToken(email);
-
     const user = {
-      name: name,
+      fistName: firstName,
+      lastName: lastName,
+      cpf: cpf,
+      phone: phone,
+      birthday: birthday,
       email: email,
       password: password,
       money: 0,
       // token: token,
     };
+
+    // const token = Authentication.geraToken(email);
     await addDoc(usersRef, user);
     return res.status(201).json({ mensage: 'Usuário cadastrado!' });
   }
