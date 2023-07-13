@@ -23,7 +23,7 @@ class RegisterController {
     }
 
     const user = {
-      fistName: firstName,
+      firstName: firstName,
       lastName: lastName,
       cpf: cpf,
       phone: phone,
