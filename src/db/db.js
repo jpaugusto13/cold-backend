@@ -3,13 +3,13 @@ const { getFirestore } = require('firebase/firestore');
 require('dotenv').config();
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyCop8EI6gTWdreNposANuhRnyXhfoALrlw',
-  authDomain: 'teste-85c3b.firebaseapp.com',
-  projectId: 'teste-85c3b',
-  storageBucket: 'teste-85c3b.appspot.com',
-  messagingSenderId: '198383591523',
-  appId: '1:198383591523:web:81234b3fc124c303591856',
-  measurementId: 'G-S7CMJVC1R5',
+  apiKey: 'AIzaSyBro-BeyaSOJh-Lt2VSW8xQEFQQnxUKtRo',
+  authDomain: 'cold2-4b9cc.firebaseapp.com',
+  projectId: 'cold2-4b9cc',
+  storageBucket: 'cold2-4b9cc.appspot.com',
+  messagingSenderId: '612165737232',
+  appId: '1:612165737232:web:fc16dc171dd12586aae395',
+  measurementId: 'G-HK2EFN0Y2J',
 };
 
 // Initialize Firebase
