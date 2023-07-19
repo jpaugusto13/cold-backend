@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use((req, res, next) => {
   res.header(
     'Access-Control-Allow-Origin',
-    'https://cold-frontend.vercel.app/'
+    'https://cold-frontend.vercel.app'
   );
   next();
 });
