@@ -10,7 +10,9 @@ const loginRouter = require('../router/loginRouter');
 const userRouter = require('../router/userRouter');
 const gameDoubleRouter = require('../router/gameDoubleRouter');
 const doublePlayRouter = require('../router/doublePlayRouter');
-const doubleUserBetController = require('../router/doubleUserBetRouter');
+const doubleUserBetRouter = require('../router/doubleUserBetRouter');
+const doubleGetBetRouter = require('../router/doubleGetBetRouter');
+const doubleDeleteBetRouter = require('../router/doubleDeleteBetRouter');
 
 app.use(cors());
 app.use(express.json());
@@ -27,7 +29,9 @@ app.use('/Auth', loginRouter);
 app.use('/user', userRouter);
 app.use('/gameDouble', gameDoubleRouter);
 app.use('/gameDouble', doublePlayRouter);
-app.use('/gameDouble', doubleUserBetController);
+app.use('/gameDouble', doubleUserBetRouter);
+app.use('/gameDouble', doubleGetBetRouter);
+app.use('/gameDouble', doubleDeleteBetRouter); 
 
 const port = 8080;
 module.exports = { app, port, db };

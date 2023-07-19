@@ -33,7 +33,7 @@ class RegisterController {
       money: 0,
       // token: token,
     };
-
+    
     // const token = Authentication.geraToken(email);
     await addDoc(usersRef, user);
     return res.status(201).json({ mensage: 'Usuário cadastrado!' });
